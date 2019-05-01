@@ -6,8 +6,7 @@ const UserInput = props => {
       <input
         onChange={props.change}
         type='text'
-        placeholder='username'
-        value={props.username}
+        value={props.currentName}
         style={props.style}
       />
     </div>
