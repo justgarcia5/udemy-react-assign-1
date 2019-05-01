@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
+import UserOutput from './Components/UserOutput';
+import UserInput from './Components/UserInput';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    members: [
+     { username: 'Justin', years: 5 },
+     { username: 'Jordy', years: 10 }
+    ]
+  }
+
+  nameChangeHandler = (e) => {
+    this.setState({
+      members: [
+        { username: e.target.value, years: 5 },
+        { username: 'Jordy', years: 10 }
+      ]
+    })
+  }
+
+  render () {
+    const style = {
+      fontSize: '20px',
+      border: '1px black solid',
+      borderRadius: '5px',
+      padding: '10px',
+      margin: '12px auto'
+    }
+    return (
+      <div className="App">
+        <h1>Assignment 1</h1>
+        <UserInput
+          change={this.nameChangeHandler}
+          style={style}
+        />
+        <UserOutput
+          username={this.state.members[0].username}
+          years={this.state.members[0].years}
+        />
+        <UserOutput
+          username={this.state.members[1].username}
+          years={this.state.members[1].years}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
