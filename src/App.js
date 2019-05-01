@@ -25,8 +25,9 @@ class App extends Component {
       fontSize: '20px',
       border: '1px black solid',
       borderRadius: '5px',
-      padding: '10px',
-      margin: '12px auto'
+      padding: '15px',
+      margin: '15px auto'
+
     }
     return (
       <div className="App">
