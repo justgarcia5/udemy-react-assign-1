@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   render () {
-    const style = {
+    const inputStyle = {
       fontSize: '20px',
       border: '1px black solid',
       borderRadius: '5px',
@@ -34,7 +34,8 @@ class App extends Component {
         <h1>Assignment 1</h1>
         <UserInput
           change={this.nameChangeHandler}
-          style={style}
+          style={inputStyle}
+          currentName={this.state.members[0].username}
         />
         <UserOutput
           username={this.state.members[0].username}
